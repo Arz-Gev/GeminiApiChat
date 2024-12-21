@@ -1,0 +1,131 @@
+/* Base styles for the body */
+body {
+    /* Use system fonts for best performance */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;  /* Light grey background */
+    min-height: 100vh;  /* Full viewport height */
+}
+
+/* Main chat container styles */
+.chat-container {
+    width: 90%;
+    max-width: 900px;  /* Limit maximum width */
+    margin: 0 auto;    /* Center on page */
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;  /* 80% of viewport height */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
+/* Chat history area styles */
+#chat-history {
+    flex-grow: 1;  /* Take up remaining space */
+    padding: 20px;
+    overflow-y: auto;  /* Scroll when content overflows */
+    scroll-behavior: smooth;  /* Smooth scrolling */
+}
+
+/* Input area styles */
+.input-container {
+    display: flex;
+    gap: 10px;  /* Space between elements */
+    border-top: 1px solid #e1e1e1;
+    padding: 15px;
+    background-color: #f8f9fa;
+}
+
+/* Text input field styles */
+#user-input {
+    flex-grow: 1;  /* Take up remaining space */
+    border: 1px solid #ced4da;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.15s ease-in-out;
+}
+
+/* Input focus styles */
+#user-input:focus {
+    outline: none;
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* General button styles */
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Disabled button styles */
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Send button specific styles */
+#send-button {
+    background-color: #007bff;  /* Blue */
+    color: white;
+}
+
+#send-button:hover:not(:disabled) {
+    background-color: #0056b3;  /* Darker blue on hover */
+}
+
+/* Clear button specific styles */
+#clear-button {
+    background-color: #dc3545;  /* Red */
+    color: white;
+}
+
+#clear-button:hover:not(:disabled) {
+    background-color: #c82333;  /* Darker red on hover */
+}
+
+/* Message bubble styles */
+.message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word;  /* Wrap long text */
+}
+
+/* User message styles */
+.user-message {
+    margin-left: auto;  /* Push to right side */
+    background-color: #007bff;
+    color: white;
+}
+
+/* Gemini (AI) message styles */
+.gemini-message {
+    margin-right: auto;  /* Push to left side */
+    background-color: #f1f3f4;
+    color: #202124;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .chat-container {
+        width: 100%;
+        height: 90vh;
+    }
+    
+    .message {
+        max-width:

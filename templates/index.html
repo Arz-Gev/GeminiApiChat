@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gemini Chat</title>
+    <!-- Link to our CSS file in the static folder -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Main chat container -->
+    <div class="chat-container">
+        <!-- Chat history section -->
+        <div id="chat-history">
+            <!-- Loop through existing messages in session -->
+            {% for message in session['chat_history'] %}
+                <!-- Create message div with appropriate class based on sender -->
+                <div class="message {{ 'user-message' if message.role == 'user' else 'gemini-message' }}">
+                    <!-- Show sender name and message content -->
+                    {{ 'Вы' if message.role == 'user' else 'Gemini' }}: {{ message.parts[0] }}
+                </div>
+            {% endfor %}
+        </div>
+        <!-- Input section at bottom -->
+        <div class="input-container">
+            <!-- Text input field -->
+            <input type="text" id="user-input" placeholder="Введите сообщение...">
+            <!-- Send button -->
+            <button id="send-button">Отправить</button>
+            <!-- Clear history button -->
+            <button id="clear-button">Очистить историю</button>
+        </div>
+    </div>
+    <!-- Link to our JavaScript file -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
